@@ -1340,6 +1340,7 @@ GameObject:
   - component: {fileID: 486350337}
   - component: {fileID: 486350342}
   - component: {fileID: 486350341}
+  - component: {fileID: 486350343}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Untagged
@@ -1487,6 +1488,22 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &486350343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 486350336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 616bf848feda3de408727d59c205f77e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  detectionInterval: 1
+  detectionAngle: 45
+  detectionDistance: 30
+  playerTransform: {fileID: 628799535}
 --- !u!1 &489978123
 GameObject:
   m_ObjectHideFlags: 0
@@ -2239,13 +2256,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshSurface
   m_SerializedVersion: 0
   m_AgentTypeID: 0
-  m_CollectObjects: 0
+  m_CollectObjects: 3
   m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
     m_Bits: 119
-  m_UseGeometry: 0
+  m_UseGeometry: 1
   m_DefaultArea: 0
   m_GenerateLinks: 0
   m_IgnoreNavMeshAgent: 1
@@ -4366,6 +4383,7 @@ GameObject:
   - component: {fileID: 1754159451}
   - component: {fileID: 1754159450}
   - component: {fileID: 1754159449}
+  - component: {fileID: 1754159453}
   m_Layer: 6
   m_Name: Floor
   m_TagString: Untagged
@@ -4467,6 +4485,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 508878581}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1754159453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754159448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffffi
 --- !u!1 &1756445850
 GameObject:
   m_ObjectHideFlags: 0

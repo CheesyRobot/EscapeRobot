@@ -6,10 +6,9 @@ using UnityEngine.AI;
 public class EnemyController : MonoBehaviour
 {
     private NavMeshAgent agent;
-    [SerializeField] private List<Transform> Waypoints;
+    [SerializeField] private List<Transform> Waypoints; // Potential Queue usage when room generation is made
     int currentWaypointIndex = 0;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -23,7 +22,7 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         if (Waypoints == null || Waypoints.Count == 0)
