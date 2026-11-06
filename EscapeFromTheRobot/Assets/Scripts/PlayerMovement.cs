@@ -22,6 +22,10 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 velocity;
     
     private Vector2 m_moveAmt;
+    [SerializeField]
+    private Vector3 startPosition;
+    [SerializeField]
+    private Quaternion startRotation;
 
     private void OnEnable()
     {
@@ -38,6 +42,12 @@ public class PlayerMovement : MonoBehaviour
         m_moveAction = InputSystem.actions.FindAction("Move");
         m_sprintAction = InputSystem.actions.FindAction("Sprint");
         speed = walkSpeed;
+    }
+
+    private void Start()
+    {
+        startPosition = transform.position;
+        startRotation = transform.rotation;
     }
 
     void Update()
@@ -62,5 +72,13 @@ public class PlayerMovement : MonoBehaviour
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+    }
+
+    public void Respawn()
+    {
+        controller.enabled = false;
+        transform.SetPositionAndRotation(startPosition, startRotation);
+        velocity = Vector3.zero;
+        controller.enabled = true;
     }
 }

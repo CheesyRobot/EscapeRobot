@@ -48,4 +48,13 @@ public class EnemyController : MonoBehaviour
 
         agent.SetDestination(Waypoints[currentWaypointIndex].position);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("Player entered enemy trigger. Respawning player.");
+            GameManager.Instance.RespawnPlayer();
+        }
+    }
 }
